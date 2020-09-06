@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="./app.js"></script>
+    <title>Document</title>
+    <style>
+        #hide {
+  overflow : hidden; /* Hide scrollbars */
+}
+        .movie{
+            transition: all 0.7s ease-out;
+        }
+        .movie-fall{
+            transform: translateY(12rem) rotateZ(10deg);
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container-fluid">
+        <header class="bg-dark text-white p-2 mb-2">
+            <h1 class="text-center mb-4">My Favorite Movies</h1>
+        </header>
+        <div class="inputs mb-2">
+            <form>
+                <label for="title">Title</label>
+                <input id="title" type="text">
+                <label for="rating">Ratings</label>
+                <input id="rating" type="number" min="0" max="9" step="1" value="0">
+                <button type="submit" class="btn btn-info mb-1">Add Movie</button>
+            </form>
+        </div>
+        <span class="table-responsive text-center">
+            <table class="table table-stripped table-bordered" id="hide">
+                <thead>
+                    <tr class="d-flex bg-light">
+                        <td class="col-8" scope='col'><b>Movie<span data-item="sortNameUp"
+                                    title="Sort titles in ascending order"
+                                    class="ml-1 mr-0 btn btn-info p-0 sort">&#x2B9D
+                                    </span>
+                                    <span data-item="sortNameDown"
+                                    title="Sort titles in Descending order"
+                                    class="sort btn btn-danger p-0 ">&#x2B9F
+                                    </span></b>
+                        </td>
+                        <td class="col-2" scope='col'><b>Rating<span data-item="sortRatingUp"
+                                    title="Sort Ratings in ascending order"
+                                    class="ml-1 p-0 mr-1 btn btn-info sort">&#x2B9D</span><span
+                                    data-item="sortRatingDown" title="Sort Ratings in descending order"
+                                    class="sort btn btn-danger p-0">&#x2B9F</span b></b>
+                        </td>
+                        <td class="col-2" scope='col'><b>Delete</b></td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            </div>
+    </main>
+    <footer class="text-center mt-2 mb-5"><a href="https://github.com/johnOdia/Jquery-Exercise/tree/master/part3" data-link="link" title="Link to github Repository"><button type="button" class="btn btn-link"><i>Built by John Odia</i></button></a></footer>
+</body>
+
+</html>
