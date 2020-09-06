@@ -46,6 +46,7 @@ $(function () {
         let movieRatings = []
         let sortedTitles
         let sortedRatings
+        getMovies()
         $('tbody').text('')
         for (let movie in myMovies) {
             movieTitles.push(myMovies[movie].name)
@@ -154,7 +155,6 @@ $(function () {
     function addToLocStorage(title,rating){
         let storedMovies = JSON.parse(localStorage.getItem('movies'))
         if(storedMovies === null) storedMovies = {}
-        console.log(storedMovies)
         storedMovies[title] = { name: title, rating: rating }
         myMovies = storedMovies
         localStorage.setItem('movies',JSON.stringify(myMovies))
