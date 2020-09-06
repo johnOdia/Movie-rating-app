@@ -1,6 +1,7 @@
 $(function () {
 
     //GLOBAL VARIABLES
+
     let myMovies =  JSON.parse(localStorage.getItem('movies')) //All movie titles and ratings go in here as nested objects with the name as key which is saved to local storage.
     const getMovies = () => myMovies =  JSON.parse(localStorage.getItem('movies'))
 
@@ -152,9 +153,11 @@ $(function () {
     let movieStorage = {}
     function addToLocStorage(title,rating){
         let storedMovies = JSON.parse(localStorage.getItem('movies'))
+        if(storedMovies === null) storedMovies = {}
+        console.log(storedMovies)
         storedMovies[title] = { name: title, rating: rating }
-        moviesObject = storedMovies
-        localStorage.setItem('movies',JSON.stringify(moviesObject))
+        myMovies = storedMovies
+        localStorage.setItem('movies',JSON.stringify(myMovies))
     }
 
     let renderStoredMovies = (function(){
